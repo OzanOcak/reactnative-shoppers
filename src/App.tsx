@@ -6,15 +6,14 @@
  */
 
 import React from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
-import Header from './components/Header';
+import {SafeAreaView, View} from 'react-native';
+import Home from './screens/Home';
 
 function App(): JSX.Element {
   return (
     <SafeAreaView>
-      <View>
-        <Header />
-        <Text className="font-bold text-green-500">hello</Text>
+      <View className="px-2">
+        <Home />
       </View>
     </SafeAreaView>
   );
