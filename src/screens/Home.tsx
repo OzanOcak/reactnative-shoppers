@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {ScrollView, Text, View} from 'react-native';
 import Header from '../components/Header';
-import {Image} from 'react-native';
+import Product from '../components/Product';
 
 interface Item {
   _id: number;
@@ -53,33 +53,8 @@ const Home = () => {
             {/** Products */}
             <View>
               {productsData.map((item: Item) => (
-                <View
-                  key={item._id}
-                  className="mb-6 border-[1px] border-gray-400 rounded-lg p-4">
-                  <Image
-                    source={{uri: item.image}}
-                    alt={item.title}
-                    className="w-full h-80"
-                  />
-                  <View className="gap-2 px-2">
-                    <Text className="text-lg text-black font-bold">
-                      {item.title}
-                    </Text>
-                    <Text className="text-base">
-                      Price:{' '}
-                      <Text className="text-black font-semibold">
-                        <Text>{item.price}</Text>
-                      </Text>{' '}
-                      <Text className="text-gray-600 line-through">
-                        {item.oldPrice}
-                      </Text>
-                    </Text>
-                    <Text className="text-base">
-                      Category:{' '}
-                      <Text className="text-black">{item.category}</Text>
-                    </Text>
-                    <Text className="text-sm tracking-white">{item.des}</Text>
-                  </View>
+                <View key={item._id}>
+                  <Product item={item} />
                 </View>
               ))}
             </View>
